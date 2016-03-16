@@ -5,7 +5,7 @@ de Repasse (Siconv).
 
 A API foi desenvolvida em 2011 para disponibilizar dados abertos do Siconv.
 
-# Representational State Transfer (REST)
+## Representational State Transfer (REST)
 
 Tecnicamente, ela segue os princípios
 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer).
@@ -43,7 +43,7 @@ página tem até 500 registros, mas esse parâmetro é configurável (vide
 definições de métodos e filtros, abaixo). Caso haja mais resultados que os
 disponíveis na página, é fornecido link para a consulta da próxima página.
 
-# Banco de dados e definição de esquemas
+## Banco de dados e definição de esquemas
 
 A API utiliza a bibloteca [SQL Alchemy](http://www.sqlalchemy.org/). Assim, é
 compatível com todos os SGBDs suportados por essa plataforma.
@@ -87,7 +87,7 @@ Seguem algumas propriedades especiais de uma tal clase:
   classe `Municipios`, `href_proponentes` retorna a URL de uma consulta a todos
   os proponentes deste municipio)
 
-# Definições dos métodos e filtros
+## Definições dos métodos e filtros
 
 As definições dos métodos da API e os filtros suportados são feitas no módulo
 `webservice.py`. Cada método definido deve herdar da classe `APIMethod`.
@@ -117,13 +117,13 @@ Propriedades especiais:
 * `max_results`: quantidade máxima de resultados por página da consulta
   (por padrão, 500)
 
-# Documentação da API
+## Documentação da API
 
 A documentação para usuários da API é gerada automaticamente, baseada nas
 [docstrings](https://en.wikipedia.org/wiki/Docstring) e outras informações
 das classes. A documentação automática será montada na URL `/versao/consulta`.
 
-# Instalação
+## Instalação
 
  Crie um ambiente virtual para o Python
 
@@ -138,13 +138,13 @@ das classes. A documentação automática será montada na URL `/versao/consulta
 
   $ python setup.py install
 
-# Configuração
+## Configuração
 
 Edite o arquivo `production.ini` para configurar os parâmetros do banco de
 dados, na seção [sqlalchemy]. Estão disponíveis como exemplos nos arquivos
 `development.exemplo.ini` e `production.exemplo.ini`.
 
-# Licença
+## Licença
 
 Affero GPL versão 3
 
