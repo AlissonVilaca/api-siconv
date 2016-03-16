@@ -1,0 +1,21 @@
+<img src="img/DadosAbertos_SICONV_mer.PNG" alt="diagrama com o esquema do banco de dados" width="800" height="836" border="0" usemap="#map" />
+
+<map name="map">
+<!-- #$-:Image map file created by GIMP Image Map plug-in -->
+<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+<!-- #$-:Please do not edit lines starting with "#$" -->
+<!-- #$VERSION:2.3 -->
+<!-- #$AUTHOR:Augusto Herrmann e Nitai Bezerra -->
+<area shape="rect" coords="10,38,113,92" alt="situacao_proposta" title="Situações de Propostas" href="/siconv/v1/consulta/situacoes_propostas" />
+<area shape="rect" coords="173,0,257,86" alt="municipios" title="Municípios" href="/siconv/v1/consulta/municipios" />
+<area shape="rect" coords="330,17,432,69" alt="naturezas_juridicas" title="Naturezas Jurídicas" href="/siconv/v1/consulta/naturezas_juridicas" />
+<area shape="rect" coords="460,21,579,70" alt="esferas_administrativas" title="Esferas Administrativas" href="/siconv/v1/consulta/esferas_administrativas" />
+<area shape="rect" coords="655,91,776,143" alt="situacoes_convenios" title="Situações de Convênios" href="/siconv/v1/consulta/situacoes_convenios" />
+<area shape="rect" coords="267,101,386,297" alt="proponentes" title="Proponentes" href="/siconv/v1/consulta/proponentes" />
+<area shape="rect" coords="266,329,386,408" alt="pessoas_responsaveis" title="Pessoas Responsáveis" href="/siconv/v1/consulta/pessoas_responsaveis" />
+<area shape="rect" coords="267,425,387,476" alt="modalidades" title="Modalidades de Propostas" href="/siconv/v1/consulta/modalidades" />
+<area shape="rect" coords="264,505,382,569" alt="orgaos" title="Órgãos" href="/siconv/v1/consulta/orgaos" />
+<area shape="rect" coords="260,615,377,832" alt="programas" title="Programas" href="/siconv/v1/consulta/programas" />
+<area shape="rect" coords="53,123,173,523" alt="propostas" title="Propostas" href="/siconv/v1/consulta/propostas" />
+<area shape="rect" coords="491,134,611,578" alt="convenios" title="Convênios" href="/siconv/v1/consulta/convenios" />
+</map>

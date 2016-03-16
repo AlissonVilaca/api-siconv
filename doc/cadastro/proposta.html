@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang="pt_BR"> <!--<![endif]-->
+<head>
+  <title>Dados Abertos SICONV &#8212; api.convenios.gov.br</title>
+  
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/b/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta name="description" content="Dados Abertos SICONV &#8212; api.convenios.gov.br">
+  <meta name="author" content="Ministério do Planejamento, Orçamento e Gestão; e colaboradores">
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <!-- CSS: implied media=all -->
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" type="text/css" href="../css/960_24_col.css" />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <!-- end CSS-->
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
+       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
+       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="js/modernizr-2.0.6.min.js"></script>
+  
+</head>
+<body>
+<div id="barra-brasil-v3">
+    <span></span>
+</div>
+<div class="container_24 containerPrincipal">
+ <header>
+        <div id="topo" class="grid_21 prefix_1">
+            <h1 id="logo" class="grid_8 alpha"><a href="http://api.convenios.gov.br" title="Dados Abertos SICONV &#8212; api.convenios.gov.br" rel="home">Dados Abertos SICONV &#8212; api.convenios.gov.br</a></h1>
+            <p class="visuallyhidden"><a href="#conteudo">Pular para o conteúdo</a></p>
+	    <h1>Dados Abertos SICONV</h1>
+		
+        </div>
+      <div class="access menu grid_21 node menubar">
+        <ul>
+          <li><a class="" href="../index.html">In&iacute;cio</a></li>
+          <li><a class="" href="../metodos.html">Lista de M&eacute;todos</a></li>
+      </ul>
+      </div> <!-- .menu -->
+    </nav> 
+  </header>
+
+<div class="grid_21 prefix_1" >
+
+<h2><a name="conteudo"></a>M&eacute;todos</h2>
+<p>Consultar o cadastro das propostas.</p>
+<div class="vocabulary-node node">
+  <h2>Propostas</h2>
+  <div class="content clear-block">
+      <div class="authors">
+        <h3>M&eacute;todo:</h3>
+        <span class="value">Consultar por Propostas</span>
+      </div>
+      <div class="abstract">
+	<h3>Descrição:</h3>
+	<span class="value">Fornece uma lista com informações relativas a propostas feitas ao Poder Executivo Federal. Cada proposta tem sua pr&oacute;pria URI e ID que comp&otilde;e a mesma.</span>
+      </div>
+      <div class="namespace-uri">
+	<h3>URL:</h3>
+        <span class="value">http://api.convenios.gov.br/siconv/v1/consulta/propostas.&lt;formato&gt;</span>
+      </div>
+      <div class="abstract">
+	<h3>Formatos:</h3>
+	<span class="value">xml, json, cvs, html</span>
+      </div>
+      <div class="abstract">
+	<h3>Detalhar:</h3>
+	<span class="value"><a href="../detalhar/detalhar_proposta.html">Documenta&ccedil;&atilde;o sobre detalhamento da proposta.</a></span>
+      </div>
+      <div class="namespace-uri">
+	<h3>Exemplo:</h3>
+        <span class="value"><a href="http://api.convenios.gov.br/siconv/v1/consulta/propostas.html?id_orgao_concedente=56000">http://api.convenios.gov.br/siconv/v1/consulta/propostas.html?id_orgao_concedente=56000</a> Filtra propostas com o Ministério das Cidades</span>
+      </div>
+  </div>
+</div>
+
+<div class="vocabulary-node node">
+    <div class="content clear-block">
+  <h2 class="push">Par&acirc;metros da Solicita&ccedil;&atilde;o</h2>
+      <table class="container_24 prefix_2">
+<tbody><tr>
+<th>Campo</th><th>Tipo</th><th>Obrigat&oacute;rio?</th><th>Descri&ccedil;&atilde;o</th>
+</tr>
+<tr><td>uf</td><td>Texto</td><td>N&atilde;o</td><td>Unidade da Federação do município do proponente</td></tr> 
+<tr><td>id_proponente</td><td>Inteiro</td><td>N&atilde;o</td><td>Identificador do proponente</td></tr>
+<tr><td>cpf_responsavel</td><td>Inteiro</td><td>N&atilde;o</td><td>CPF do Responsável pela instituição proponente</td></tr>
+
+<tr><td>id_orgao_concedente</td><td>Inteiro</td><td>N&atilde;o</td><td>Identificador do órgão concedente</td></tr>
+<tr><td>id_situacao</td><td>Inteiro</td><td>N&atilde;o</td><td>Identificador da situação da proposta</td></tr>
+<tr><td>id_modalidade</td><td>Inteiro</td><td>N&atilde;o</td><td>Identificador da modalidade de proposta ou convênio</td></tr>
+<tr><td>cpf_pessoa_responsavel_pelo_concedente</td><td>Inteiro</td><td>N&atilde;o</td><td>CPF do Responsável pela proposta</td></tr>
+<tr><td>cpf_pessoa_responsavel_pelo_envio</td><td>Inteiro</td><td>N&atilde;o</td><td>CPF do Responsável pelo envio da proposta</td></tr>
+<tr><td>cpf_pessoa_responsavel_pelo_cadastramento</td><td>Inteiro</td><td>N&atilde;o</td><td>CPF do Responsável pelo cadastramento da proposta</td></tr>
+
+</tbody></table>
+
+
+  <div class="content clear-block">
+  <h2 class="push">Informa&ccedil;&otilde;es da Resposta</h2>
+      <table class="container_24 prefix_2">
+<tbody><tr>
+<th>Campo</th><th>Descri&ccedil;&atilde;o</th>
+</tr>
+<tr><td>id</td><td>Identificador da proposta</td></tr>
+<tr><td>inicio_execucao</td><td>data de início da execução</td></tr> 
+<tr><td>fim_execucao</td><td>data de fim da execução</td></tr> 
+<tr><td>justificativa_resumida</td><td>Resumo da justificativa</td></tr> 
+<tr><td>objeto_resumido</td><td>Resumo do objeto</td></tr> 
+<tr><td>valor_global</td><td>valor global</td></tr> 
+<tr><td>valor_repasse</td><td>valor do repasse</td></tr> 
+<tr><td>valor_contra_partida</td><td>valor da contra partida</td></tr> 
+<tr><td>data_envio_proposta</td><td>data de envio da proposta</td></tr> 
+<tr><td>data_cadastramento_proposta</td><td>data de cadastramento da proposta</td></tr> 
+<tr><td>situacao</td><td>situação da proposta</td></tr> 
+<tr><td>proponente</td><td>Dados do proponente</td></tr> 
+<tr><td>cpf_pessoa_responsavel_pelo_concedente</td><td>CPF do Responsável pela proposta</td></tr>
+<tr><td>cpf_pessoa_responsavel_pelo_envio</td><td>CPF do Responsável pelo envio da proposta</td></tr>
+<tr><td>cpf_pessoa_responsavel_pelo_cadastramento</td><td>CPF do Responsável pelo cadastramento da proposta</td></tr>
+</tbody></table>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31176873-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>
+

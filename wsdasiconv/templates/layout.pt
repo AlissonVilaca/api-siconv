@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:define-macro="main"
+      class="no-js" lang="pt_BR"
+      manifest="${URI_BASE}static/wsdasiconv.appcache">
+<!--<![endif]-->
+<head>
+  <title metal:define-slot="page-title">Título da página</title>
+  
+  <meta name="author" content="Ministério do Planejamento, Orçamento e Gestão; e colaboradores">
+  <!-- metadados de assunto -->
+  <tal:block tal:omit-tag metal:define-slot="metadata-subject" />
+  
+  <!-- versoes alternativas -->
+  <tal:block tal:omit-tag metal:define-slot="metadata-alternate" />
+  
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  <!-- CSS: implied media=all -->
+  <link rel="stylesheet" type="text/css" href="http://cachedcommons.org/cache/960/0.0.0/stylesheets/960.css" />
+  <link rel="stylesheet" type="text/css" href="${URI_BASE}static/css/style.css" />
+  <tal:block tal:omit-tag metal:define-slot="custom-styles" />
+  <!-- end CSS-->
+  
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/static/imagens/favicon.ico" type="image/x-icon" />
+  
+  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
+       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
+       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
+  <script type="application/ecmascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
+</head>
+<body>
+  <div id="barra-brasil-v3">
+      <span></span>
+  </div>
+  <div class="container_16 containerPrincipal">
+    <header>
+      <div id="topo" class="grid_21 prefix_1">
+        <p id="logo" class="grid_8 alpha"><a href="http://api.convenios.gov.br" title="Dados Abertos SICONV &#8212; api.convenios.gov.br" rel="home">Dados Abertos SICONV &#8212; api.convenios.gov.br</a></p>
+        <p class="visuallyhidden"><a href="#conteudo">Pular para o conteúdo</a></p>
+        <nav class="access menu grid_21 node menubar">
+          <p class="visuallyhidden">Documentação:</p>
+          <ul>
+            <li><a class="" href="${URI_BASE}doc/index.html">In&iacute;cio</a></li>
+            <li><a class="" href="${URI_BASE}doc/metodos.html">Lista de M&eacute;todos</a></li>
+        </ul>
+        </nav> 
+      </div>
+      <aside id="poweredby">impulsionado por <a href="http://dados.gov.br"><img src="http://dados.gov.br/img/logo.png" alt="dados.gov.br" /></a></aside>
+      <aside id="compartilhe">compartilhe:
+        <span class='st_twitter_hcount' displayText='Tweet'></span>
+        <span class='st_twitterfollow_hcount' displayText='Siga no Twitter' st_username='dadosgovbr'></span>
+        <span class='st_facebook_hcount' displayText='Facebook'></span>
+        <span class='st_identi_hcount' displayText='identi.ca'></span>
+        <span class='st_plusone_hcount' displayText='Google +1'></span>
+        <span class='st_email_hcount' displayText='Email'></span>
+        <span class='st_sharethis_hcount' displayText='ShareThis'></span>
+    </aside>
+    </header>
+    <h1 metal:define-slot="heading-title"></h1>
+    <aside metal:define-slot="metadata-aside"></aside>
+    <article metal:define-slot="content" id="content">
+    </article>
+  </div>
+  <!-- scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <tal:block tal:omit-tag metal:define-slot="custom-scripts" />
+  <!-- sharethis -->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "ur-58126bb8-b149-4567-aac5-a39e4af35f78"}); </script>
+  <!-- google analytics -->
+  <script type="text/javascript">
+    //<![CDATA[
+     var _gaq = _gaq || [];
+     _gaq.push(['_setAccount', 'UA-31176873-1']);
+     _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+    //]]>
+  </script>
+</body>
+</html>

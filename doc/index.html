@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang="pt_BR"> <!--<![endif]-->
+<head>
+
+
+  <title>Dados Abertos SICONV — api.convenios.gov.br</title>
+  
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/b/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta name="description" content="Dados Abertos SICONV — api.convenios.gov.br">
+  <meta name="author" content="Ministério do Planejamento, Orçamento e Gestão; e colaboradores">
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <!-- CSS: implied media=all -->
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" type="text/css" href="css/960_24_col.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- end CSS-->
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
+       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
+       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
+  <script type="application/ecmascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
+  
+</head>
+<body>
+<div id="barra-brasil-v3">
+    <span></span>
+</div>
+<div class="container_24 containerPrincipal">
+ <header>
+        <div id="topo" class="grid_21 prefix_1">
+            <h1 id="logo" class="grid_8 alpha"><a href="http://api.convenios.gov.br" title="Dados Abertos SICONV — api.convenios.gov.br" rel="home">Dados Abertos SICONV — api.convenios.gov.br</a></h1>
+            <p class="visuallyhidden"><a href="#conteudo"></a>Pular para o conteúdo</p>
+	    <h1>Dados Abertos SICONV</h1>
+		
+        </div>
+      <div>
+          <aside id="poweredby">impulsionado por <a href="http://dados.gov.br"><img src="http://dados.gov.br/img/logo.png" alt="dados.gov.br" /></a></aside>
+          <aside id="compartilhe">compartilhe:
+            <span class='st_twitter_hcount' displayText='Tweet'></span>
+            <span class='st_twitterfollow_hcount' displayText='Siga no Twitter' st_username='dadosgovbr'></span>
+            <span class='st_facebook_hcount' displayText='Facebook'></span>
+            <span class='st_identi_hcount' displayText='identi.ca'></span>
+            <span class='st_plusone_hcount' displayText='Google +1'></span>
+            <span class='st_email_hcount' displayText='Email'></span>
+            <span class='st_sharethis_hcount' displayText='ShareThis'></span>
+          </aside>
+      </div>
+      <div class="access menu grid_21 node menubar">
+        <ul>
+          <li><a class="" href="index.html">Início</a></li>
+          <li><a class="" href="metodos.html">Lista de Métodos</a></li>
+      </ul>
+      </div> <!-- .menu -->
+    </nav> 
+  </header>
+
+<div class="grid_21 prefix_1" >
+<h3><a name="conteudo"></a>Por que Dados Abertos SICONV?</h3>
+
+<div>A prestação de dados como um serviço governamental traz vantagens pra toda a sociedade, incluindo o próprio governo. O Ministério do Planejamento, Orçamento e Gestão está economizando recursos através da publicação dessas informações na Internet. 
+<p/>A disponibilização dos dados do SICONV é um compromisso firmado pelo governo brasileiro na <a href="http://opengovpartnership.org" target="_blank" >Parceria para Governo Aberto</a> (<i>Open Government Partnership</i> - OGP do inglês). O governo está comprometido em promover a transparência dos gastos públicos, fornecer informações de valor agregado à sociedade e promover a pesquisa e inovação tecnológica através da implementação da políticas brasileira de dados abertos. Essa API está sendo desenvolvida como parte da <a href="http://wiki.gtinda.ibge.gov.br/MainPage.ashx" >Infraestrutura Nacional de Dados Abertos - INDA</a>.
+
+</div>
+<br/>
+<h3>Quais dados estão disponíveis?</h3>
+
+<p>O SICONV mantém registro de todos os convênios firmados pelo poder executivo da Administração Pública Federal. Abaixo uma lista dos dados disponíveis por essa API:</p>
+
+      <ol class="listDados">
+          <li>Dados dos proponentes</li>
+          <li>Dados das propostas</li>
+	  <li>Dados dos convênios</li>
+	  <li>òrgãos concedentes</li>
+	  <li>Programas</li>
+	  <li>...</li>
+      </ol>
+
+<h3>Modelo de Dados</h3>
+
+<p align="center">
+<img src="img/DadosAbertos_SICONV_mer.PNG" alt="diagrama com o esquema do banco de dados" width="800" height="836" border="0" usemap="#map" />
+
+<map name="map">
+<!-- #$-:Image map file created by GIMP Image Map plug-in -->
+<!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+<!-- #$-:Please do not edit lines starting with "#$" -->
+<!-- #$VERSION:2.3 -->
+<!-- #$AUTHOR:Augusto Herrmann e Nitai Bezerra -->
+<area shape="rect" coords="10,38,113,92" alt="situacao_proposta" title="Situações de Propostas" href="/siconv/v1/consulta/situacoes_propostas" />
+<area shape="rect" coords="173,0,257,86" alt="municipios" title="Municípios" href="/siconv/v1/consulta/municipios" />
+<area shape="rect" coords="330,17,432,69" alt="naturezas_juridicas" title="Naturezas Jurídicas" href="/siconv/v1/consulta/naturezas_juridicas" />
+<area shape="rect" coords="460,21,579,70" alt="esferas_administrativas" title="Esferas Administrativas" href="/siconv/v1/consulta/esferas_administrativas" />
+<area shape="rect" coords="655,91,776,143" alt="situacoes_convenios" title="Situações de Convênios" href="/siconv/v1/consulta/situacoes_convenios" />
+<area shape="rect" coords="267,101,386,297" alt="proponentes" title="Proponentes" href="/siconv/v1/consulta/proponentes" />
+<area shape="rect" coords="266,329,386,408" alt="pessoas_responsaveis" title="Pessoas Responsáveis" href="/siconv/v1/consulta/pessoas_responsaveis" />
+<area shape="rect" coords="267,425,387,476" alt="modalidades" title="Modalidades de Propostas" href="/siconv/v1/consulta/modalidades" />
+<area shape="rect" coords="264,505,382,569" alt="orgaos" title="Órgãos" href="/siconv/v1/consulta/orgaos" />
+<area shape="rect" coords="260,615,377,832" alt="programas" title="Programas" href="/siconv/v1/consulta/programas" />
+<area shape="rect" coords="53,123,173,523" alt="propostas" title="Propostas" href="/siconv/v1/consulta/propostas" />
+<area shape="rect" coords="491,134,611,578" alt="convenios" title="Convênios" href="/siconv/v1/consulta/convenios" />
+</map>
+</p> 
+<p align style="text-align: right;" align="right"><a href="img/DadosAbertos_SICONV_mer_maior.PNG" alt="diagrama maior com o esquema do banco de dados" >Imagem maior</a></p>
+<br/>
+
+<h3>Breve Explicação Sobre o SICONV</h3>
+
+<p>Para o SICONV, um <b>convênio</b> ou contrato de repasse é o instrumento que formaliza transferências voluntárias entre um <b>órgão</b> da Administração Pública Federal e estados, municípios, Distrito Federal e entidades privadas sem fins lucrativos. A organização que recebe o recurso financeiro precisa ter personalidade jurídica, e é chamada de <b>proponente</b> ou <b>convenente</b>. O <b>proponente</b> cria uma <b>proposta</b> que é a formalização da intenção deste de firmar um <b>convênio</b> com um <b>órgão</b> da APF. A <b>proposta</b> deve conter um objeto e uma justificativa, além de outras informações, e deve indicar qual <b>programa</b> de governo ela está implementando. O <b>órgão</b> da APF, também chamado de <b>concedente</b>, pode aceitar a <b>proposta</b>, que a partir desse momento passa a ser chamada de <b>convênio</b>. Um <b>convênio</b> tem um período de vigência.</p>
+<p>Durante a execução do convênio, o convenente deve prestar contas do gasto dos repasses, e o concedente deve qualificar a execução através de pareceres. Esta parte do SICONV <b>ainda</b> não está disponibilizada nesta API.</p>
+<br/>
+<h3>Como utilizar a API</h3>
+<p>O acesso aos dados é feito através de URLs, recursos web nos formatos XML, JSON e CSV. Além desses formatos, também é disponibilizada uma representação em HTML, que possibilita ua visualização através do navegador e melhora a classificação desses conteúdos nas ferramentas de busca. Em cada consulta é possível especificar uma série de parâmetros de filtro, que devem compor a URL. Esta API segue os princípios REST e implementa a característica <a href="http://en.wikipedia.org/wiki/HATEOAS" target="_blank" >HATEOAS</a> desta arquitetura. Você (ser humano ou máquina) pode navegar através de todos os recursos (convênios, proponentes, órgãos, etc.) apenas utilizando os links disponíveis, começando por aqui: <a href="http://api.convenios.gov.br/siconv/v1/consulta" >lista inicial</a>.</p>
+
+<p> 
+Para acessar os dados da API é necessário conhecer o endereço ou URL: 
+</p> 
+<p> 
+<code>http://api.convenios.gov.br/siconv/v1/consulta/<metodo>.<formato>?<atributo1>=<valor1>&<atributo2>=<valor2></code> 
+</p> 
+
+<p> 
+Dois parâmetros são necessários para solicitar qualquer dado através da API: <metodo> e <formato>. O método indica qual informação você quer e o "formato" define o formato da resposta, em HTML, XML, JSON ou CSV. Consulte nossa <a href="metodos.html" >documentação</a> para saber quais são os métodos disponíveis. Os parâmetros campo e valor são utilizados para filtrar os registros retornados pelos métodos. </p>
+<p>Alguns exemplos de consultas:
+<ul class="listDados">
+
+<li>Esta consulta busca todos os órgãos que contém no nome o texto "turismo": <p/><a href="http://api.convenios.gov.br/siconv/v1/consulta/orgaos.html?nome=turismo" >http://api.convenios.gov.br/siconv/v1/consulta/orgaos.html?nome=turismo</a>. Todas as consultas abaixo são realizadas apenas navegando através dos links exibidos.</li>
+
+<li>Esta consulta exibe os dados específicos do Ministério do Turismo: <p/><a href="http://api.convenios.gov.br/siconv/dados/orgao/54000.html" >http://api.convenios.gov.br/siconv/dados/orgao/54000.html</a></li>
+
+<li>Esta consulta exibe todos os convênios onde o Ministério do Turismo é o concedente: <p/><a href="http://api.convenios.gov.br/siconv/v1/consulta/convenios.html?id_orgao_concedente=54000" >http://api.convenios.gov.br/siconv/v1/consulta/convenios.html?id_orgao_concedente=54000</a></li>
+
+<li>Esta consulta exibe todos os dados do convênio 739390 que envolve o Ministério do Turismo e a Prefeitura de Amparo do Serra-MG: <p/><a href="http://api.convenios.gov.br/siconv/dados/convenio/739390.html" >http://api.convenios.gov.br/siconv/dados/convenio/739390.html</a></li>
+
+<li>Esta consulta exibe todos os dados do cadastro da Prefeitura de Amparo do Serra-MG que é um proponente/convenente: <p/><a href="http://api.convenios.gov.br/siconv/dados/proponente/18316174000123.html" >http://api.convenios.gov.br/siconv/dados/proponente/18316174000123.html</a></li>
+
+<li>Esta consulta exibe todos convênios do proponente Prefeitura de Amparo do Serra-MG: <p/><a href="http://api.convenios.gov.br/siconv/v1/consulta/convenios.html?id_proponente=18316174000123" >http://api.convenios.gov.br/siconv/v1/consulta/convenios.html?id_proponente=18316174000123</a></li>
+
+</ul>
+<br/>
+Todas as consultas acima podem retornar dados nos formatos JSON, XML e CSV. Basta trocar o trecho "html" pelo respectivo formato.
+</p>
+
+<h3>Algumas visões de agregações:</h3>
+<ol class="listDados">
+<li>Total de convênios por ano e mês da data de assinatura em CSV: <a href="http://api.convenios.gov.br/siconv/v1/visao/total_convenios_por_ano_mes_data_assinatura.csv" >http://api.convenios.gov.br/siconv/v1/visao/total_convenios_por_ano_mes_data_assinatura.csv</a>
+<p/><a href='http://homologacao.dados.gov.br/dataset/siconv/resource/41e6fbed-e61f-4fd8-ab02-b5ab2fef96b2#graph?graph={"group":"data","series":["total"],"graphType":"line"}' >Visualização no portal dados.gov.br</a> 
+</li>
+<li>Total de convênios de ONGs por ano e mês da data de assinatura em CSV: <a href="http://api.convenios.gov.br/siconv/v1/visao/total_convenios_por_ano_mes_data_assinatura_ongs.csv" >http://api.convenios.gov.br/siconv/v1/visao/total_convenios_por_ano_mes_data_assinatura_ongs.csv</a>
+<p/><a href='http://homologacao.dados.gov.br/dataset/siconv/resource/902b7e75-eccf-4467-b492-51444c7d394f#graph?graph={"group":"data","series":["total"],"graphType":"line"}' >Visualização no portal dados.gov.br</a> 
+</li>
+<li>Total de convênios em vigência por mês em CSV: <a href="http://api.convenios.gov.br/siconv/v1/visao/total_convenios_em_vigencia_por_mes_mv.csv" >http://api.convenios.gov.br/siconv/v1/visao/total_convenios_em_vigencia_por_mes_mv.csv</a>
+<p/><a href='http://homologacao.dados.gov.br/dataset/siconv/resource/b2cecb02-df6d-47c7-8709-a8ae03ae5281#graph?graph={"group":"data","series":["total"],"graphType":"line"}' >Visualização no portal dados.gov.br</a> 
+</li>
+</ol>
+
+
+<h3>Licença de Uso dos Dados</h3>
+<p>Esses dados são disponibilizados sob a licença <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="blank">ODBL</a> (Open DataBase License). Todos os direitos dos conteúdos individuais estão licenciados sob a <a href="http://opendatacommons.org/licenses/dbcl/1.0/" target="blank">DBCL</a> (Database Contents License).</p>
+<br/>
+<h3>Atualidade</h3>
+A atualização dos dados é realizada diariamente por processo automático a partir dos dados do <em>Data Warehouse</em> do Siconv do dia anterior (D-1).
+
+<h3>Dump do Banco de Dados</h3>
+Em breve disponibilizaremos um dump de todo o banco de dados.
+
+<h3><font color="red">Atenção!</font></h3>
+
+Essa é uma versão beta, a api está em estado de desenvolvimento e os métodos poderão sofrer alterações sem aviso.
+
+<p align="center">Tire dúvidas sobre o SICONV através do endereço <a href="http://convenios.gov.br/">http://convenios.gov.br/</a> ou pelo telefone 0800 978 2340.</p> 
+</body>
+<!-- sharethis -->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "ur-58126bb8-b149-4567-aac5-a39e4af35f78"}); </script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31176873-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>

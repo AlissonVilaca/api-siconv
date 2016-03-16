@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="layout.macros['main']"
+      tal:define="item d[0];
+                  title python:tidy_label(item.__class__.__name__)+(u' %s'%item.id)+(u'' if not getattr(item,'nome',False) else u': %s'%item.nome);
+                  long_title python:title+u' &#8212; Dados Abertos SICONV &#8212; api.convenios.gov.br';
+                  description python:u'Informações sobre '+title+u' constantes no SICONV &#8212; Sistema de Convênios e Contratos de Repasse'">
+<head>
+  <title metal:fill-slot="page-title">
+    <span tal:replace="long_title" />
+  </title>
+  <tal:block tal:omit-tag metal:fill-slot="metadata-subject">
+    <link rel="http://purl.org/dc/terms/subject http://schema.org/about http://xmlns.com/foaf/0.1/primaryTopic" href=""
+          tal:attributes="href item.uri" />
+    <link vocab="http://schema.org/" rel="about" href=""
+          tal:attributes="href item.uri" />
+    <meta itemscope itemprop="http://purl.org/dc/terms/subject http://schema.org/about http://xmlns.com/foaf/0.1/primaryTopic"
+          content="" tal:attributes="content item.uri" />
+    <meta name="description" content="Dados Abertos SICONV &#8212; api.convenios.gov.br"
+          tal:attributes="content description" />
+  </tal:block>
+  <tal:block tal:omit-tag metal:fill-slot="metadata-alternate">
+    <link rel="canonical" href="#" tal:attributes="href item.uri" />
+    <tal:block tal:condition="metadados.alternativos"
+               tal:repeat="alt metadados.alternativos.values()">
+      <link rel="alternate" href="#"
+            tal:attributes="href alt" />
+    </tal:block>
+  </tal:block>
+</head>
+<body>
+  <h1 metal:fill-slot="heading-title">
+    <a href="#" tal:attributes="href item.uri">
+      <span tal:replace="title" />
+    </a>
+  </h1>
+  <aside metal:fill-slot="metadata-aside" tal:condition="metadados.alternativos" class="metadados">Estes dados também estão disponíveis nos formatos:
+    <tal:block tal:repeat="alt metadados.alternativos.items()">
+      <a href="#" tal:attributes="href alt[1]" tal:content="alt[0]">ext</a>
+    </tal:block>
+  </aside>
+  <article metal:fill-slot="content" id="conteudo">
+    <dl>
+      <tal:block tal:repeat="chave item.__expostos__">
+        <span tal:define="valor python:getattr(item, chave)" tal:condition="valor and chave[:5] != 'href_'" tal:omit-tag>
+          <dt tal:content="python:tidy_label(chave)" />
+          <dd tal:content="structure python:tidy_value(valor)">
+          </dd>
+        </span>
+      </tal:block>
+    </dl>
+    <div tal:define="hrefs python:[chave for chave in item.__expostos__ if chave[:5] == 'href_']"
+         tal:condition="hrefs" tal:omit-tag>
+    <h3>Veja também:</h3>
+    <ul tal:repeat="chave hrefs">
+        <li tal:define="valor python:getattr(item, chave)">
+          <a href="#" tal:attributes="href valor" tal:content="python:tidy_label(chave[5:])" />
+        </li>
+    </ul>
+    </div>
+  </article>
+</body>
+</html>

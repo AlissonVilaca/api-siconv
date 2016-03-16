@@ -1,0 +1,51 @@
+Metadata-Version: 1.1
+Name: wsda-siconv
+Version: 0.1
+Summary: Web Service de Dados Abertos do SICONV
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: ========================================
+         Web Service de Dados Abertos do SICONV
+        
+         wsda-siconv
+        
+        ========================================
+        
+        Licença: GPL versão 2
+        
+        1) Modo de instalação
+        
+         Crie um ambiente virtual para o Python
+        
+          $ virtualenv --no-site-packages [diretorio-do-ambiente]
+        
+         Ative o ambiente virtual
+        
+          $ source [diretorio-do-ambiente]/bin/activate
+        
+         Execute a instalação do pacote e de suas dependências
+         (obs.: requer conexão com a internet para baixar os pacotes)
+        
+          $ python setup.py install
+        
+        2) Configuração
+        
+        Edite o arquivo production.ini para configurar os parâmetros
+        do banco de dados, na seção [sqlalchemy]
+        
+        
+        
+        
+        0.0
+        ---
+        
+        -  Initial version
+        
+Keywords: web wsgi bfg pylons pyramid
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Pylons
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="layout.macros['main']"
+      tal:define="title python:tidy_label(name);
+                  long_title python:title+u' &#8212; Dados Abertos SICONV &#8212; api.convenios.gov.br';
+                  description python:u'Consulta sobre '+title+u' no SICONV &#8212; Sistema de Convênios e Contratos de Repasse'">
+<head>
+  <title metal:fill-slot="page-title"><span tal:replace="long_title">Título da consulta</span></title>
+  <tal:block tal:omit-tag metal:fill-slot="metadata-subject">
+    <meta name="description" content="Dados Abertos SICONV &#8212; api.convenios.gov.br"
+          tal:attributes="content description" />
+  </tal:block>
+  <tal:block tal:omit-tag metal:fill-slot="metadata-alternate">
+    <tal:block tal:condition="metadados.alternativos"
+               tal:repeat="alt metadados.alternativos.values()">
+      <link rel="alternate" content="#"
+            tal:attributes="content alt" />
+    </tal:block>
+  </tal:block>
+</head>
+<body>
+  <h1 metal:fill-slot="heading-title">
+    <span tal:replace="title">Título da consulta</span>
+    <span tal:condition="filters_used" tal:omit-tag >(filtrado por <tal:block tal:content="python:u', '.join(filters[filter].name.lower() for filter in filters_used)"></tal:block>)</span>
+  </h1>
+  <aside metal:fill-slot="metadata-aside" tal:condition="metadados.alternativos" class="metadados">Esta consulta também está disponível nos formatos:
+    <tal:block tal:repeat="alt metadados.alternativos.items()">
+      <a href="#" tal:attributes="href alt[1]" tal:content="alt[0]">ext</a>
+    </tal:block>
+  </aside>
+  <article metal:fill-slot="content" id="conteudo">
+   <div tal:condition="metadados.total_registros" tal:omit-tag >
+    <p tal:define="total metadados.total_registros;
+                   first dataset_split.current_offset+1;
+                   pageend dataset_split.current_offset+dataset_split.split_size;
+                   last python:pageend if total > pageend else total">
+      Exibindo resultados ${first}-${last} de ${total}
+      <span tal:condition="exists:metadados.proximos" tal:omit-tag>
+          (<a href="#" rel="next" tal:attributes="href metadados.proximos">próximos</a>)
+      </span>
+    </p>
+    <ul tal:repeat="item d">
+      <li tal:attributes="id item.id">
+        <h2>
+          <a href="#" tal:attributes="href item.uri">
+            <span tal:replace="python:tidy_label(item.__class__.__name__)" />
+            <span tal:replace="item.id" />
+            <span tal:condition="exists:item.nome" tal:replace="': ' + item.nome" />
+            <span tal:condition="not:exists:item.nome">
+                <span tal:condition="exists:item.descricao" tal:replace="': ' + item.descricao[:80]" />
+            </span>
+          </a>
+        </h2>
+        <dl>
+          <tal:block tal:repeat="chave item.__resumidos__">
+            <span tal:define="valor python:getattr(item, chave, None)" tal:condition="valor and chave[:5] != 'href_'" tal:omit-tag>
+              <dt tal:content="python:tidy_label(chave)" />
+              <dd tal:content="structure python:tidy_value(valor)">
+              </dd>
+            </span>
+          </tal:block>
+        </dl>
+        <div tal:define="hrefs python:[chave for chave in item.__resumidos__ if chave[:5] == 'href_']"
+            tal:condition="hrefs" tal:omit-tag>
+        <h3>Veja também:</h3>
+        <ul tal:repeat="chave hrefs">
+            <li tal:define="valor python:getattr(item, chave)">
+              <a href="#" tal:attributes="href valor" tal:content="python:tidy_label(chave[5:])" />
+            </li>
+        </ul>
+        </div>
+      </li>
+    </ul>
+    <p tal:define="total metadados.total_registros;
+                   first dataset_split.current_offset+1;
+                   pageend dataset_split.current_offset+dataset_split.split_size;
+                   last python:pageend if total > pageend else total">
+      Exibindo resultados ${first}-${last} de ${total}
+      <span tal:condition="exists:metadados.proximos" tal:omit-tag>
+          (<a href="#" rel="next" tal:attributes="href metadados.proximos">próximos</a>)
+      </span>
+    </p>
+   </div>
+   <div tal:condition="not:metadados.total_registros" tal:omit-tag >
+    <p>Nenhum resultado encontrado.</p>
+   </div>
+  </article>
+</body>
+</html>
