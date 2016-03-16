@@ -127,16 +127,23 @@ das classes. A documentação automática será montada na URL `/versao/consulta
 
  Crie um ambiente virtual para o Python
 
-  $ virtualenv --no-site-packages [diretorio-do-ambiente]
+  `virtualenv --no-site-packages [diretorio-do-ambiente]`
 
  Ative o ambiente virtual
 
-  $ source [diretorio-do-ambiente]/bin/activate
+  `source [diretorio-do-ambiente]/bin/activate`
 
  Execute a instalação do pacote e de suas dependências
  (obs.: requer conexão com a internet para baixar os pacotes)
 
-  $ python setup.py install
+  `python setup.py install`
+  
+  Para ter dados a experimentar, sugere-se carregar o dump do banco de dados
+  da API disponibilizado pelo Minisério do Planejamento:
+  
+  http://repositorio.dados.gov.br/economia-financas/encargos-financeiros/transferencias-financeiras/API_siconv_140515.zip
+  
+  Obs.: os dados desse dump não estão atualizados.
 
 ## Configuração
 
